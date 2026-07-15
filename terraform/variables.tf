@@ -62,3 +62,46 @@ variable "management_subnet_name" {
 variable "management_subnet_prefix" {
   default = "10.0.3.0/24"
 }
+
+#############################
+# Linux VM
+#############################
+
+variable "linux_vm_name" {
+  default = "vm-linux-aep-01"
+}
+
+variable "linux_admin_username" {
+  default = "azureuser"
+}
+
+variable "linux_vm_size" {
+  default = "Standard_B2s_v2"
+}
+
+variable "linux_ssh_public_key" {
+  description = "SSH public key for the Linux VM"
+  type        = string
+}
+
+#############################
+# Windows VM
+#############################
+
+variable "windows_vm_name" {
+  default = "vm-windows-aep-01"
+}
+
+variable "windows_admin_username" {
+  default = "azureadmin"
+}
+
+variable "windows_admin_password" {
+  description = "Windows Administrator Password"
+  type        = string
+  sensitive   = true
+}
+
+variable "windows_vm_size" {
+  default = "Standard_B2s_v2"
+}

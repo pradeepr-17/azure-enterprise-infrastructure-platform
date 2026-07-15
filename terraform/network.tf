@@ -75,8 +75,19 @@ resource "azurerm_subnet_network_security_group_association" "management" {
   network_security_group_id = azurerm_network_security_group.management.id
 }
 
-  resource "azurerm_public_ip" "linux" {
+resource "azurerm_public_ip" "linux" {
   name                = "pip-linux-aep-01"
+  location            = azurerm_resource_group.main.location
+  resource_group_name = azurerm_resource_group.main.name
+
+  allocation_method = "Static"
+  sku               = "Standard"
+
+  tags = local.common_tags
+}
+
+resource "azurerm_public_ip" "windows" {
+  name                = "pip-windows-aep-01"
   location            = azurerm_resource_group.main.location
   resource_group_name = azurerm_resource_group.main.name
 
