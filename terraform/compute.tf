@@ -125,7 +125,7 @@ resource "azurerm_windows_virtual_machine" "windows" {
   size                = var.windows_vm_size
 
   admin_username = var.windows_admin_username
-  admin_password = var.windows_admin_password
+  admin_password = random_password.vm_admin.result
 
   network_interface_ids = [
     azurerm_network_interface.windows.id
