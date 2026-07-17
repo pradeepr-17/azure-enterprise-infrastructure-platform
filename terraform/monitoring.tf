@@ -34,7 +34,8 @@ resource "azurerm_monitor_data_collection_rule" "main" {
 
       counter_specifiers = [
         "\\Processor(_Total)\\% Processor Time",
-        "\\Memory\\Available MBytes"
+        "\\Memory\\Available MBytes",
+        "\\LogicalDisk(_Total)\\% Free Space"
       ]
     }
 

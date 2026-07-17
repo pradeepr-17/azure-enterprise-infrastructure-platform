@@ -1,0 +1,5 @@
+Perf
+| where ObjectName == "LogicalDisk"
+| where CounterName == "% Free Space"
+| summarize AvgFreeSpace = avg(CounterValue) by Computer, InstanceName, bin(TimeGenerated, 5m)
+| order by TimeGenerated desc

@@ -105,3 +105,8 @@ variable "windows_admin_password" {
 variable "windows_vm_size" {
   default = "Standard_B2s_v2"
 }
+
+variable "alert_email" {
+  description = "Email address for Azure Monitor alerts"
+  type        = string
+}

@@ -1,0 +1,5 @@
+Perf
+| where ObjectName == "Memory"
+| where CounterName == "Available MBytes"
+| summarize AvgAvailableMB = avg(CounterValue) by Computer, bin(TimeGenerated, 5m)
+| order by TimeGenerated desc

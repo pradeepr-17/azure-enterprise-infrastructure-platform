@@ -1,0 +1,3 @@
+Heartbeat
+| summarize LastHeartbeat = max(TimeGenerated) by Computer
+| order by LastHeartbeat desc
