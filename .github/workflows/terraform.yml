@@ -44,14 +44,14 @@ jobs:
 
       - name: Terraform Plan
         env:
-          ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
-          ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
-          ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
-          ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
-          
-          TF_VAR_SUBSCRIPTION_ID: ${{ secrets.TF_VAR_SUBSCRIPTION_ID }}
-          TF_VAR_LINUX_SSH_PUBLIC_KEY: ${{ secrets.TF_VAR_LINUX_SSH_PUBLIC_KEY }}
-          TF_VAR_WINDOWS_ADMIN_PASSWORD: ${{ secrets.TF_VAR_WINDOWS_ADMIN_PASSWORD }}
-          TF_VAR_ALERT_EMAIL: ${{ secrets.TF_VAR_ALERT_EMAIL }}
+           ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
+           ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
+           ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
+           ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
+
+           TF_VAR_subscription_id: ${{ secrets.TF_VAR_SUBSCRIPTION_ID }}
+           TF_VAR_linux_ssh_public_key: ${{ secrets.TF_VAR_LINUX_SSH_PUBLIC_KEY }}
+           TF_VAR_windows_admin_password: ${{ secrets.TF_VAR_WINDOWS_ADMIN_PASSWORD }}
+           TF_VAR_alert_email: ${{ secrets.TF_VAR_ALERT_EMAIL }}
 
         run: terraform plan
