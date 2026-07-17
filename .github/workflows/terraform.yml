@@ -21,6 +21,15 @@ jobs:
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
+        name: Azure Login
+        with:
+          creds: |
+        {
+          "client_id": "${{ secrets.ARM_CLIENT_ID }}",
+          "client_secret": "${{ secrets.ARM_CLIENT_SECRET }}",
+          "subscription_id": "${{ secrets.ARM_SUBSCRIPTION_ID }}",
+          "tenant_id": "${{ secrets.ARM_TENANT_ID }}"
+        }
 
       - name: Terraform Format Check
         run: terraform fmt -check -recursive
