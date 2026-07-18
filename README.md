@@ -1,1 +1,0 @@
-# azure-enterprise-infrastructure-platform
