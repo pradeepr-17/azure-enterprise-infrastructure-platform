@@ -113,9 +113,9 @@ resource "azurerm_managed_disk" "windows_data" {
   tags = local.common_tags
 }
 
-####################################################
+###################################################
 # Windows Server 2022 Virtual Machine
-####################################################
+###################################################
 
 resource "azurerm_windows_virtual_machine" "windows" {
   name                = var.windows_vm_name
